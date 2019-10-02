@@ -1,0 +1,9 @@
+laba1\view\View.class
+laba1\model\train\PassengerTrain.class
+laba1\App.class
+laba1\model\coach\TrainCoach.class
+laba1\model\pass_coach\PassengerCoach.class
+laba1\model\coach\TypeCoach.class
+laba1\model\pass_coach\TypePassengerCoach.class
+laba1\model\PassCoachService.class
+laba1\model\TrainService.class
