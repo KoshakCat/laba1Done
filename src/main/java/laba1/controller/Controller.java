@@ -5,6 +5,7 @@ import laba1.controller.command.CommandFactory;
 import laba1.model.PassCoachService;
 import laba1.model.TrainService;
 import laba1.view.View;
+import org.apache.log4j.Logger;
 
 import java.io.InputStream;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Controller {
+    private static final Logger LOG = Logger.getLogger(Controller.class);
     private View view;
     private InputStream in;
     private static CommandFactory commandFactory = CommandFactory.getInstance();
@@ -32,6 +34,7 @@ public class Controller {
     }
 
     private boolean isNumberMenuValid (String userString) {
+        LOG.debug("User input string " + userString);
         Matcher menuNumberCodeMatcher = menuCodePattern.matcher(userString);
         return menuNumberCodeMatcher.matches();
     }
@@ -56,6 +59,7 @@ public class Controller {
         do {
             userMenuCommand = scanner.nextLine();
             if (!isTrainNumberValid(userMenuCommand)) {
+                LOG.info("Validation train number ..." + userMenuCommand);
                 view.printInputIncorrectData();
             }
         } while (!isTrainNumberValid(userMenuCommand));
@@ -68,6 +72,7 @@ public class Controller {
         do {
             userMenuCommand = scanner.nextLine();
             if (!isRangeNumberValid(userMenuCommand)) {
+                LOG.error("block validation number, user input wrong value - " + userMenuCommand);
                 view.printInputIncorrectData();
             }
         } while (!isRangeNumberValid(userMenuCommand));

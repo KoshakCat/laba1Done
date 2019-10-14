@@ -1,0 +1,8 @@
+2019-10-14 17:09:17 DEBUG Controller:37 - User input string 1
+2019-10-14 17:09:23 DEBUG Controller:37 - User input string 5
+2019-10-14 17:13:42 DEBUG Controller:37 - User input string 1
+2019-10-14 17:13:45 INFO  Controller:62 - Validation train number ...dfgsxd
+2019-10-14 17:13:51 INFO  Controller:62 - Validation train number ...fff
+2019-10-14 17:19:37 DEBUG Controller:37 - User input string 4
+2019-10-14 17:19:51 ERROR Controller:75 - block validation number, user input wrong value - 6
+2019-10-14 17:19:54 ERROR Controller:75 - block validation number, user input wrong value - dvfsd
