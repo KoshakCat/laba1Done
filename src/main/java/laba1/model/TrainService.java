@@ -2,13 +2,18 @@ package laba1.model;
 
 import laba1.model.pass_coach.PassengerCoach;
 import laba1.model.train.PassengerTrain;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+@Component
 public class TrainService {
+    @Autowired
     private static TrainService instance;
+    @Autowired
     private static PassCoachService passCoachService = PassCoachService.getInstance();
 
     public static TrainService getInstance(PassCoachService passCoachService) {

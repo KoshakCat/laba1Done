@@ -6,6 +6,8 @@ import laba1.model.PassCoachService;
 import laba1.model.TrainService;
 import laba1.view.View;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 import java.util.List;
@@ -13,22 +15,28 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Component
 public class Controller {
     private static final Logger LOG = Logger.getLogger(Controller.class);
+    @Autowired
     private View view;
-    private InputStream in;
+    private InputStream in = System.in;
+    @Autowired
     private static CommandFactory commandFactory = CommandFactory.getInstance();
+    @Autowired
     private static PassCoachService passCoachService = PassCoachService.getInstance();
+    @Autowired
     private static TrainService trainService = TrainService.getInstance(passCoachService);
+
     private final Pattern menuCodePattern = Pattern.compile("[1-5]");
     private final Pattern exitCodePattern = Pattern.compile("[1]");
     private final Pattern trainNumberCodePattern = Pattern.compile("[0-9]+");
     private final Pattern rangeNumberCodePattern = Pattern.compile("[1-2]");
     public static final int[] CAPACITYCOACHES = {8, 16, 32, 64};
 
-    public Controller(View view, InputStream in) {
+    public Controller(View view) {
         this.view = view;
-        this.in = in;
+        //this.in = in;
         passCoachService.fillDefaultListOfCoaches();
         trainService.fillDefaultTrain();
     }

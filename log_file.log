@@ -6,3 +6,7 @@
 2019-10-14 17:19:37 DEBUG Controller:37 - User input string 4
 2019-10-14 17:19:51 ERROR Controller:75 - block validation number, user input wrong value - 6
 2019-10-14 17:19:54 ERROR Controller:75 - block validation number, user input wrong value - dvfsd
+2019-10-14 19:18:54 DEBUG Controller:37 - User input string 5
+2019-10-15 19:51:29 DEBUG Controller:46 - User input string 5
+2019-10-15 20:07:17 DEBUG Controller:45 - User input string 1
+2019-10-15 20:08:46 DEBUG Controller:45 - User input string 5

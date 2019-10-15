@@ -1,9 +1,12 @@
 package laba1.view;
 
 import laba1.model.train.PassengerTrain;
+import org.springframework.stereotype.Component;
+
 import java.util.Iterator;
 import java.util.Map;
 
+@Component
 public class View {
 
     public void printLabaMenu() {
