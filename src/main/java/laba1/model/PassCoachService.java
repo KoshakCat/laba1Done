@@ -64,4 +64,11 @@ public class PassCoachService {
         }
         return null;
     }
+
+    public PassengerCoach getCoachFromSetByLambda (int coachID) {
+        return passengerCoaches.stream()
+                                .filter(coach -> coach.getIdCoach() == coachID)
+                                .findFirst()
+                                .orElse(null);
+    }
 }

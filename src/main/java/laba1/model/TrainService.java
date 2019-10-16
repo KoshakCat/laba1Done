@@ -56,7 +56,7 @@ public class TrainService {
     public void fillDefaultTrain() {
         PassengerTrain train1 = new PassengerTrain(100_500);
         train1.setDestinationCityPassengerTrain("ONE WAY TICKET TO RUSSIA");
-        addCoachToTrain(train1, passCoachService.getCoachFromSet(1));
+        addCoachToTrain(train1, passCoachService.getCoachFromSetByLambda(1));
         addCoachToTrain(train1, passCoachService.getCoachFromSet(4));
         addCoachToTrain(train1, passCoachService.getCoachFromSet(6));
         addCoachToTrain(train1, passCoachService.getCoachFromSet(2));
