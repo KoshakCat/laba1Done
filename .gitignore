@@ -6,6 +6,7 @@
 *.zip
 *.tar.gz
 *.rar
+*.log
 
 # Compiled class file
 *.class
