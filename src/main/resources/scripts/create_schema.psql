@@ -1,0 +1,79 @@
+CREATE DATABASE laba1_db
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Russian_Russia.1251'
+    LC_CTYPE = 'Russian_Russia.1251'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+CREATE TABLE type_passaneger_coach
+(
+    id bigint NOT NULL,
+    capacity bigint NOT NULL,
+    type text COLLATE pg_catalog."default" NOT NULL,
+    luggage_weight bigint NOT NULL,
+    CONSTRAINT type_passaneger_coach_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.type_passaneger_coach
+    OWNER to postgres;
+
+CREATE TABLE train_coach
+(
+    id bigint NOT NULL,
+    id_train bigint NOT NULL,
+    id_coach bigint NOT NULL,
+    CONSTRAINT train_coach_pkey PRIMARY KEY (id),
+    CONSTRAINT train_coach_id_coach_fkey FOREIGN KEY (id_coach)
+        REFERENCES public.passenger_coach ("id_Coach") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT train_coach_id_train_fkey FOREIGN KEY (id_train)
+        REFERENCES public.passenger_train (id_train) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.train_coach
+    OWNER to postgres;
+
+CREATE TABLE passenger_train
+(
+    id_train bigint NOT NULL,
+    destination text COLLATE pg_catalog."default",
+    CONSTRAINT passenger_train_pkey PRIMARY KEY (id_train)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.passenger_train
+    OWNER to postgres;
+
+CREATE TABLE passenger_coach
+(
+    "id_Coach" bigint NOT NULL,
+    type_id bigint NOT NULL,
+    CONSTRAINT passenger_coach_pkey PRIMARY KEY ("id_Coach"),
+    CONSTRAINT type_id FOREIGN KEY (type_id)
+        REFERENCES public.type_passaneger_coach (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.passenger_coach
+    OWNER to postgres;

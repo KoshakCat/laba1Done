@@ -1,0 +1,35 @@
+INSERT INTO type_passaneger_coach(
+	id, capacity, type, luggage_weight)
+	VALUES
+	(1, 8, "SV", 100),
+	(2, 16, "ADVANCE", 200),
+	(3, 32, "MIDDLE", 300),
+	(4, 64, "LOW", 400);
+
+INSERT INTO train_coach(
+	id, id_train, id_coach)
+	VALUES
+	 (1, 1, 1),
+	 (2, 1, 2),
+	 (3, 1, 4),
+	 (4, 1, 6),
+	 (5, 2, 1),
+	 (6, 2, 3),
+	 (7, 2, 5);
+
+INSERT INTO passenger_train(
+	id_train, destination)
+	VALUES
+	 (1, "ONE WAY TICKET TO RUSSIA"),
+	 (2, "KYIV - PLANET MARS");
+
+INSERT INTO passenger_coach(
+	"id_Coach", type_id)
+	VALUES
+	 (1, 2),
+	 (2, 1),
+	 (3, 4),
+	 (4, 3),
+	 (5, 4),
+	 (6, 1);
+
